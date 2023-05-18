@@ -7,6 +7,7 @@
 
 # Build directories and binary files
 out
+.clangd
 
 # User spesific settings
 CMakeUserPresets.json
