@@ -141,7 +141,7 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked --mount=type=cache,t
     apt-get -y install --no-install-recommends cmake cmake-curses-gui ninja-build
     apt-get -y install --no-install-recommends ccache cppcheck doxygen graphviz
 
-    python3 -m pip install --upgrade cmakelang cpplint
+    python3 -m pip install --upgrade cmakelang cpplint --break-system-packages
 EOF
 
 # ------------------------------------------------------------------------------
