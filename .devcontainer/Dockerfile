@@ -1,5 +1,6 @@
 # syntax=docker/dockerfile:1.5-labs
 
+# [18.04]: bionic, [20.04]: focal, [22.04]: jammy, [22.10]: kinetic, [23.04]: lunar, [23.10]: mantic
 ARG VARIANT="jammy"
 
 FROM ubuntu:${VARIANT}
@@ -53,13 +54,25 @@ ARG GCC_VERSION="12"
 RUN --mount=type=cache,target=/var/cache/apt,sharing=locked --mount=type=cache,target=/var/lib/apt,sharing=locked <<EOF
     . /etc/os-release
 
-    filename="ubuntu-toolchain-r-ubuntu-ppa-${VERSION_CODENAME}"
-    wget -O - "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x60c317803a41ba51845e371a1e9377a2ba9ef27f" | gpg --batch --dearmor --no-tty --output "/usr/share/keyrings/${filename}.gpg"
-    echo "deb [signed-by=/usr/share/keyrings/${filename}.gpg] https://ppa.launchpadcontent.net/ubuntu-toolchain-r/ppa/ubuntu ${VERSION_CODENAME} main" >> "/etc/apt/sources.list.d/${filename}.list"
+    {
+        filename="ubuntu-toolchain-r-ubuntu-ppa-${VERSION_CODENAME}"
+        key="https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x60c317803a41ba51845e371a1e9377a2ba9ef27f"
+        url="https://ppa.launchpadcontent.net/ubuntu-toolchain-r/ppa/ubuntu"
+        if wget --spider "${url}/dists/${VERSION_CODENAME}"; then
+            wget -O - "${key}" | gpg --batch --dearmor --no-tty --output "/usr/share/keyrings/${filename}.gpg"
+            echo "deb [signed-by=/usr/share/keyrings/${filename}.gpg] ${url} ${VERSION_CODENAME} main" >> "/etc/apt/sources.list.d/${filename}.list"
+        fi
+    }
 
-    filename="ubuntu-toolchain-r-ubuntu-test-${VERSION_CODENAME}"
-    wget -O - "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x60c317803a41ba51845e371a1e9377a2ba9ef27f" | gpg --batch --dearmor --no-tty --output "/usr/share/keyrings/${filename}.gpg"
-    echo "deb [signed-by=/usr/share/keyrings/${filename}.gpg] https://ppa.launchpadcontent.net/ubuntu-toolchain-r/test/ubuntu ${VERSION_CODENAME} main" >> "/etc/apt/sources.list.d/${filename}.list"
+    {
+        filename="ubuntu-toolchain-r-ubuntu-test-${VERSION_CODENAME}"
+        key="https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x60c317803a41ba51845e371a1e9377a2ba9ef27f"
+        url="https://ppa.launchpadcontent.net/ubuntu-toolchain-r/test/ubuntu"
+        if wget --spider "${url}/dists/${VERSION_CODENAME}"; then
+            wget -O - "${key}" | gpg --batch --dearmor --no-tty --output "/usr/share/keyrings/${filename}.gpg"
+            echo "deb [signed-by=/usr/share/keyrings/${filename}.gpg] ${url} ${VERSION_CODENAME} main" >> "/etc/apt/sources.list.d/${filename}.list"
+        fi
+    }
 
     apt-get update
     apt-get -y install --no-install-recommends g++-${GCC_VERSION} gcc-${GCC_VERSION} gdb make
@@ -89,26 +102,40 @@ ENV PYTHONUNBUFFERED="1"
 RUN --mount=type=cache,target=/var/cache/apt,sharing=locked --mount=type=cache,target=/var/lib/apt,sharing=locked <<EOF
     . /etc/os-release
 
-    filename="deadsnakes-ubuntu-nightly-${VERSION_CODENAME}"
-    wget -O - "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xf23c5a6cf475977595c89f51ba6932366a755776" | gpg --batch --dearmor --no-tty --output "/usr/share/keyrings/${filename}.gpg"
-    echo "deb [signed-by=/usr/share/keyrings/${filename}.gpg] https://ppa.launchpadcontent.net/deadsnakes/nightly/ubuntu ${VERSION_CODENAME} main" >> "/etc/apt/sources.list.d/${filename}.list"
+    {
+        filename="deadsnakes-ubuntu-nightly-${VERSION_CODENAME}"
+        key="https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xf23c5a6cf475977595c89f51ba6932366a755776"
+        url="https://ppa.launchpadcontent.net/deadsnakes/nightly/ubuntu"
+        if wget --spider "${url}/dists/${VERSION_CODENAME}"; then
+            wget -O - "${key}" | gpg --batch --dearmor --no-tty --output "/usr/share/keyrings/${filename}.gpg"
+            echo "deb [signed-by=/usr/share/keyrings/${filename}.gpg] ${url} ${VERSION_CODENAME} main" >> "/etc/apt/sources.list.d/${filename}.list"
+        fi
+    }
 
-    filename="deadsnakes-ubuntu-ppa-${VERSION_CODENAME}"
-    wget -O - "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xf23c5a6cf475977595c89f51ba6932366a755776" | gpg --batch --dearmor --no-tty --output "/usr/share/keyrings/${filename}.gpg"
-    echo "deb [signed-by=/usr/share/keyrings/${filename}.gpg] https://ppa.launchpadcontent.net/deadsnakes/ppa/ubuntu ${VERSION_CODENAME} main" >> "/etc/apt/sources.list.d/${filename}.list"
+    {
+        filename="deadsnakes-ubuntu-ppa-${VERSION_CODENAME}"
+        key="https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xf23c5a6cf475977595c89f51ba6932366a755776"
+        url="https://ppa.launchpadcontent.net/deadsnakes/ppa/ubuntu"
+        if wget --spider "${url}/dists/${VERSION_CODENAME}"; then
+            wget -O - "${key}" | gpg --batch --dearmor --no-tty --output "/usr/share/keyrings/${filename}.gpg"
+            echo "deb [signed-by=/usr/share/keyrings/${filename}.gpg] ${url} ${VERSION_CODENAME} main" >> "/etc/apt/sources.list.d/${filename}.list"
+        fi
+    }
 
     apt-get update
     apt-get -y install --no-install-recommends python${PYTHON_VERSION}-dev python${PYTHON_VERSION}-venv
     update-alternatives --install "/usr/local/bin/python3" python3 "/usr/bin/python${PYTHON_VERSION}" 1
 
-    wget -O - "https://bootstrap.pypa.io/get-pip.py" | python3
-    python3 -m pip install --upgrade pip setuptools wheel
+    wget -O - "https://bootstrap.pypa.io/get-pip.py" | python3 - --break-system-packages
+    python3 -m pip install --upgrade pip setuptools wheel        --break-system-packages
 EOF
 
 # ------------------------------------------------------------------------------
 
 RUN --mount=type=cache,target=/var/cache/apt,sharing=locked --mount=type=cache,target=/var/lib/apt,sharing=locked <<EOF
-    wget -O - "https://apt.kitware.com/kitware-archive.sh" | sh -s -- --rc
+    {
+        wget -O - "https://apt.kitware.com/kitware-archive.sh" | sh -s -- --rc
+    } || true
 
     apt-get update
     apt-get -y install --no-install-recommends cmake cmake-curses-gui ninja-build
@@ -120,8 +147,11 @@ EOF
 # ------------------------------------------------------------------------------
 
 RUN <<EOF
-    mkdir -p "/usr/src/iwyu"
-    wget -O - "https://github.com/include-what-you-use/include-what-you-use/archive/refs/heads/clang_${LLVM_VERSION}.tar.gz" | tar --directory "/usr/src/iwyu" --extract --gzip --strip-components 1
+    {
+        mkdir -p "/usr/src/iwyu"
+        wget -O - "https://github.com/include-what-you-use/include-what-you-use/archive/refs/heads/clang_${LLVM_VERSION}.tar.gz" ||
+        wget -O - "https://github.com/include-what-you-use/include-what-you-use/archive/refs/heads/master.tar.gz"
+    } | tar --directory "/usr/src/iwyu" --extract --gzip --strip-components 1
 
     CC="clang-${LLVM_VERSION}"
     CXX="clang++-${LLVM_VERSION}"
