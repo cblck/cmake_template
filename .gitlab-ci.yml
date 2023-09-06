@@ -21,6 +21,7 @@ stages:
   curl -LJO "https://github.com/aminya/setup-cpp/releases/download/v0.35.2/setup-cpp-x64-linux"
   chmod +x setup-cpp-x64-linux
   echo -e "section_end:"`date +%s`":.setup_cpp\r\e[0Ksection_start:"`date +%s`":hidden_section\r\e[0K setup cpp"
+  export PATH="$HOME/.local/bin:$PATH"
   ./setup-cpp-x64-linux --compiler $compiler --cmake true --ninja true  --ccache true \
     --clangtidy true --clangformat true --cppcheck true --gcovr true
   source ~/.cpprc
