@@ -19,7 +19,7 @@ jobs:
   Test:
     runs-on: ${{ matrix.os }}
     strategy:
-      fail-fast: true
+      fail-fast: false
 
       # Recommendations:
       #   * support at least 2 operating systems
