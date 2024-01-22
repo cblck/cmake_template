@@ -164,9 +164,11 @@ The following compilers should work:
 	</details>
 
 
-  * [Cppcheck](http://cppcheck.sourceforge.net/)
+  * [Cppcheck 2.13.0+](http://cppcheck.sourceforge.net/)
 	<details>
 	<summary>Install Command</summary>
+	
+	[Manual installation may be required if version < 2.13.0.](https://github.com/danmar/cppcheck/releases)
 
 	- Debian/Ubuntu:
 
