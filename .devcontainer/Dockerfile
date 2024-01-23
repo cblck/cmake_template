@@ -49,7 +49,7 @@ ENV LC_ALL="en_US.UTF-8"
 
 # ------------------------------------------------------------------------------
 
-ARG GCC_VERSION="12"
+ARG GCC_VERSION="13"
 
 RUN --mount=type=cache,target=/var/cache/apt,sharing=locked --mount=type=cache,target=/var/lib/apt,sharing=locked <<EOF
     . /etc/os-release

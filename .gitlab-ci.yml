@@ -18,7 +18,7 @@ stages:
 
 # with foldable multi-line commands
 .setup_cpp: &setup_cpp |
-  curl -LJO "https://github.com/aminya/setup-cpp/releases/download/v0.35.3/setup-cpp-x64-linux"
+  curl -LJO "https://github.com/aminya/setup-cpp/releases/download/v0.36.1/setup-cpp-x64-linux"
   chmod +x setup-cpp-x64-linux
   echo -e "section_end:"`date +%s`":.setup_cpp\r\e[0Ksection_start:"`date +%s`":hidden_section\r\e[0K setup cpp"
   # export PATH="$HOME/.local/bin:$PATH"
