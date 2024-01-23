@@ -46,8 +46,7 @@
                 "type": "inList",
                 "string": "${hostSystemName}",
                 "list": [
-                    "Linux",
-                    "Darwin"
+                    "Linux"
                 ]
             },
             "vendor": {

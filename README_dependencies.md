@@ -51,7 +51,7 @@ The following compilers should work:
 			brew install gcc
 	</details>
 
-  * [clang 15+](https://clang.llvm.org/)
+  * [clang 16+](https://clang.llvm.org/)
 	<details>
 	<summary>Install command</summary>
 
@@ -63,7 +63,7 @@ The following compilers should work:
 
 		Visual Studio 2022 ships with LLVM [16.0.5] (see the Visual Studio section). However, to install LLVM separately:
 
-			choco install llvm --version=15.0.7
+			choco install llvm --version=16.0.5
 
 		llvm-utils for using external LLVM with Visual Studio generator:
 

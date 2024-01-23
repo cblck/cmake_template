@@ -17,7 +17,7 @@ If you want to build this container using some other versions of gcc and clang,
 you may do so with the `GCC_VER` and `LLVM_VER` arguments:
 
 ```bash
-docker build --tag=myproject:latest --build-arg GCC_VER=13 --build-arg LLVM_VER=15 .
+docker build --tag=myproject:latest --build-arg GCC_VER=13 --build-arg LLVM_VER=16 .
 ```
 
 The CC and CXX environment variables are set to GCC version 13 by default.
