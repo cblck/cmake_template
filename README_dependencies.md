@@ -2,13 +2,8 @@
 
 Note about install commands:
 - for Windows, we use [choco](https://chocolatey.org/install).
-- for macOS, we use [brew](https://brew.sh/).
 - In case of an error in cmake, make sure that the dependencies are on the PATH.
 
-
-### Too Long, Didn't Install
-
-This is a really long list of dependencies, and it's easy to mess up. That's why:
 
 #### Setup-cpp
 
@@ -43,9 +38,6 @@ The following compilers should work:
 
 			choco install mingw -y
 
-	- MacOS:
-
-			brew install gcc
 	</details>
 
   * [clang 16+](https://clang.llvm.org/)
@@ -68,9 +60,6 @@ The following compilers should work:
 			cd llvm-utils/VS2017
 			.\install.bat
 
-	- MacOS:
-
-			brew install llvm
 	</details>
 
   * [Visual Studio 2022](https://visualstudio.microsoft.com/)
@@ -112,10 +101,6 @@ The following compilers should work:
 
 			choco install cmake -y
 
-	- MacOS:
-
-			brew install cmake
-
 	</details>
 
 ### Optional Dependencies
@@ -134,11 +119,6 @@ The following compilers should work:
 			choco install doxygen.install -y
 			choco install graphviz -y
 
-	- MacOS:
-
-			brew install doxygen
-	 		brew install graphviz
-
 	</details>
 
 
@@ -153,10 +133,6 @@ The following compilers should work:
 	- Windows:
 
 			choco install ccache -y
-
-	- MacOS:
-
-			brew install ccache
 
 	</details>
 
@@ -174,10 +150,6 @@ The following compilers should work:
 	- Windows:
 
 			choco install cppcheck -y
-
-	- MacOS:
-
-			brew install cppcheck
 
 	</details>
 

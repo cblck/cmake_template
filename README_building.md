@@ -17,7 +17,7 @@ CMake uses the environment variables CC and CXX to decide which compiler to use.
 <details>
 <summary>Commands for setting the compilers </summary>
 
-- Debian/Ubuntu/MacOS:
+- Debian/Ubuntu:
 
 	Set your desired compiler (`clang`, `gcc`, etc):
 
