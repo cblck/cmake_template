@@ -10,7 +10,7 @@ on:
       - develop
 
 env:
-  CLANG_TIDY_VERSION: "15.0.2"
+  CLANG_TIDY_VERSION: "16.0.5"
   CPM_SOURCE_CACHE: ~/.cache/CPM
   VERBOSE: 1
 
