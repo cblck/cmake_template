@@ -82,7 +82,7 @@ EOF
 
 # ------------------------------------------------------------------------------
 
-ARG LLVM_VERSION="16"
+ARG LLVM_VERSION="15"
 
 RUN --mount=type=cache,target=/var/cache/apt,sharing=locked --mount=type=cache,target=/var/lib/apt,sharing=locked <<EOF
     apt-get update
