@@ -18,11 +18,15 @@
 	<details>
 	<summary>Ubuntu Image</summary>
 
-	1. Install the default Ubuntu distro.
+	1. Install the default Ubuntu distro: `wsl --install`
 	1. Open Ubuntu in Terminal and run the following commands: [(1)](https://learn.microsoft.com/en-us/cpp/build/walkthrough-build-debug-wsl2?view=msvc-170) [(2)](https://itsfoss.com/build-essential-ubuntu/)
 		```
-		sudo apt install build-essential ccache cmake doxygen gdb graphviz ninja-build rsync zip
 		sudo apt update && sudo apt upgrade
+		wget "https://github.com/aminya/setup-cpp/releases/download/v0.36.2/setup-cpp-x64-linux"
+		chmod +x ./setup-cpp-x64-linux
+		sudo ./setup-cpp-x64-linux --compiler llvm-16 --cmake 3.27.2 --ninja true --ccache true --vcpkg true
+		source ~/.cpprc
+		sudo apt install build-essential ccache clang cmake doxygen gdb graphviz ninja-build rsync zip
 		```
 	<details>
     <summary>To remove the image if something goes wrong:</summary>
