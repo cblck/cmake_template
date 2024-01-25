@@ -112,7 +112,7 @@ jobs:
         with:
           compiler: ${{ matrix.compiler }}
 
-          cmake: 3.22.1
+          cmake: 3.27.2
           ninja: false
           vcpkg: false
           ccache: false
@@ -216,7 +216,7 @@ jobs:
         with:
           compiler: gcc
 
-          cmake: 3.22.1
+          cmake: 3.27.2
           ninja: false
           vcpkg: false
           ccache: false
