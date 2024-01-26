@@ -72,7 +72,7 @@ jobs:
 
           cmake: 3.27.2
           ninja: true
-          vcpkg: false
+          vcpkg: true
           ccache: true
           clangtidy: false
 

@@ -26,7 +26,7 @@
 		chmod +x ./setup-cpp-x64-linux
 		sudo ./setup-cpp-x64-linux --compiler llvm-16 --cmake 3.27.2 --ninja true --ccache true --vcpkg true
 		source ~/.cpprc
-		sudo apt install build-essential ccache clang cmake doxygen gdb graphviz ninja-build rsync zip
+		sudo apt install build-essential clang doxygen gdb graphviz ninja-build rsync zip
 		```
 	<details>
     <summary>To remove the image if something goes wrong:</summary>
@@ -119,7 +119,7 @@
 	- **Git for Windows**
 	- *NuGet package manager*
 	- *Text Template Transformation*
-	- *vcpkg package manager*
+	- **vcpkg package manager**
 
 	### Compilers, build tools, and runtimes:
 	- *C# and Visual Basic Roslyn compilers*
