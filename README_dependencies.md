@@ -286,9 +286,17 @@
 	- Tools > Options > Better Comments:
     	- Set 'size offset' to 0.
 		- Enable 'color only TODO keyword in task comments'.
-    - Tools > Options > Include Toolbox: IWYU Executable: 'C:\..\include-what-you-use.exe'
 	- Tools > Options > Preview Features: Enable Build Acceleration by default
-	- Tools > Options > Text Editor > C/C++ > CodeStyle > General > Generated documentation comments style: '/**'
+	- Tools > Options > Text Editor > C/C++ > CodeStyle > General > Generated documentation comments style: `/**`
     </details>
 	
-1. [include-what-you-use](https://github.com/include-what-you-use/include-what-you-use#how-to-install)
+1. [include-what-you-use (0.20)](https://github.com/include-what-you-use/include-what-you-use#how-to-install)
+	1. Install [Include Toolbox 2022](https://marketplace.visualstudio.com/items?itemName=Agrael.IncludeToolbox2022)
+	1. Open a code file in an MSBuild project
+	1. Right click and select `Run Include-What-You-Use`
+	1. Confirm download of include-what-you-use.exe
+	1. Close Visual Studio
+	1. Move `C:\Users\Name\iwyu` to `C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\Llvm\x64\iwyu`
+	1. Reopen Visual Studio
+	1. Tools > Options > Include Toolbox: IWYU Executable: `C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\Llvm\x64\iwyu\include-what-you-use.exe`
+	
