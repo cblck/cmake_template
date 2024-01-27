@@ -299,4 +299,4 @@
 	1. Move `C:\Users\Name\iwyu` to `C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\Llvm\x64\iwyu`
 	1. Reopen Visual Studio
 	1. Tools > Options > Include Toolbox: IWYU Executable: `C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\Llvm\x64\iwyu\include-what-you-use.exe`
-	
+	1. Verify your system environment variable PATH contains: `C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\Llvm\x64\iwyu`
