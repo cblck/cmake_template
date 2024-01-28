@@ -23,7 +23,7 @@ stages:
   echo -e "section_end:"`date +%s`":.setup_cpp\r\e[0Ksection_start:"`date +%s`":hidden_section\r\e[0K setup cpp"
   # export PATH="$HOME/.local/bin:$PATH"
   ./setup-cpp-x64-linux --compiler $compiler --cmake 3.27.2 --ninja true  --ccache true \
-    --vcpkg true --clangtidy true --clangformat true --cppcheck true --gcovr true
+    --vcpkg true --clangtidy true --python true --clangformat true --cppcheck true --gcovr true
   source ~/.cpprc
   echo -e "section_end:"`date +%s`":hidden_section\r\e[0Ksection_start:"`date +%s`":.setup_cpp\r\e[0K"
   vcpkg --version

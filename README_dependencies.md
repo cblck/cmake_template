@@ -8,9 +8,11 @@
     	[doxygen](http://doxygen.nl/) and [Graphviz](https://graphviz.org/).
     	- [**ccache MSVC caveat 1:**](https://github.com/ccache/ccache/wiki/MS-Visual-Studio) Debug format cannot be `/ZI` aka `DebugInformationFormat=ProgramDatabase` must be `/Z7` aka `OldStyle`.
 		- [**ccache MSVC caveat 2:**](https://medium.com/@parakram.majumdar/ccache-with-msbuild-devenv-f286778e0be7) `TrackFileAccess` must be disabled.
-	- `choco install ccache cppcheck doxygen.install graphviz -y`
+	- `choco install ccache cppcheck doxygen.install graphviz python -y`
 	- Verify your system environment variable PATH contains:
-    	- `C:\ProgramData\chocolatey\bin`
+    	- `C:\Python312\Scripts\`
+		- `C:\Python312\`
+		- `C:\ProgramData\chocolatey\bin`
 		- `C:\Program Files\Cppcheck`
 		- `C`
 	</details>
@@ -24,7 +26,7 @@
 		sudo apt update && sudo apt upgrade
 		wget "https://github.com/aminya/setup-cpp/releases/download/v0.36.2/setup-cpp-x64-linux"
 		chmod +x ./setup-cpp-x64-linux
-		sudo ./setup-cpp-x64-linux --compiler llvm-16 --cmake 3.27.2 --ninja true --ccache true --vcpkg true
+		sudo ./setup-cpp-x64-linux --compiler llvm-16 --cmake 3.27.2 --ninja true --ccache true --vcpkg true --python true
 		source ~/.cpprc
 		sudo apt install build-essential clang doxygen gdb graphviz ninja-build rsync zip
 		```
@@ -300,3 +302,7 @@
 	1. Reopen Visual Studio
 	1. Tools > Options > Include Toolbox: IWYU Executable: `C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\Llvm\x64\iwyu\include-what-you-use.exe`
 	1. Verify your system environment variable PATH contains: `C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\Llvm\x64\iwyu`
+
+1. [LibIconv for Windows](https://gnuwin32.sourceforge.net/downlinks/libiconv.php) (To run [scnlib](https://github.com/eliaskosunen/scnlib) tests)
+    1. Run `libiconv-1.9.2-1.exe`
+	1. Add the following directory your system environment variable PATH: `C:\Program Files (x86)\GnuWin32\bin`

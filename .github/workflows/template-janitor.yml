@@ -117,6 +117,7 @@ jobs:
           vcpkg: false
           ccache: false
           clangtidy: false
+          python: true
 
           cppcheck: false
 
@@ -221,6 +222,7 @@ jobs:
           vcpkg: false
           ccache: false
           clangtidy: false
+          python: true
 
           cppcheck: false
 

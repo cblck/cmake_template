@@ -12,6 +12,10 @@ function(myproject_setup_dependencies)
     cpmaddpackage("gh:fmtlib/fmt#10.2.1")
   endif()
 
+  if(NOT TARGET scn::scn)
+    cpmaddpackage("gh:eliaskosunen/scnlib@2.0.0")
+  endif()
+
   if(NOT TARGET spdlog::spdlog)
     cpmaddpackage(
       NAME
@@ -30,6 +34,10 @@ function(myproject_setup_dependencies)
 
   if(NOT TARGET CLI11::CLI11)
     cpmaddpackage("gh:CLIUtils/CLI11@2.3.2")
+  endif()
+
+  if(NOT TARGET libenvpp::libenvpp)
+    cpmaddpackage("gh:ph3at/libenvpp@1.4.0")
   endif()
 
   if(NOT TARGET ftxui::screen)

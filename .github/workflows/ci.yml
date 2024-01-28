@@ -149,7 +149,7 @@ jobs:
           vcpkg: true
           ccache: true
           clangtidy: ${{ env.CLANG_TIDY_VERSION }}
-
+          python: true
 
           cppcheck: true
 

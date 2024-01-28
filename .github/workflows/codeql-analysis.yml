@@ -75,6 +75,7 @@ jobs:
           vcpkg: true
           ccache: true
           clangtidy: false
+          python: true
 
           cppcheck: false
 
