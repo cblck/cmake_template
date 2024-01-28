@@ -26,17 +26,6 @@ It requires
 
 This project gets you started with a simple game using [FTXUI](https://github.com/ArthurSonzogni/FTXUI).
 
-
-## Getting Started
-
-### Using this GitHub template
-1. Click the green `Use this template` button near the top of this page.
-1. Fill in a repository name and short description.
-1. Click 'Create repository from template'.
-1. Please wait until the cleanup workflow has finished setting up your project and committed the changes.
-1. Clone the project: `git clone https://github.com/<user>/<your_new_repo>.git`
-1. Get to work!
-
 ## More Details
  * [Initial Environment Setup](README_dependencies.md)
  * [Building Details](README_building.md)
@@ -46,3 +35,22 @@ See [Catch2 tutorial](https://github.com/catchorg/Catch2/blob/master/docs/tutori
 
 ## Fuzz testing
 See [libFuzzer Tutorial](https://github.com/google/fuzzing/blob/master/tutorial/libFuzzerTutorial.md)
+
+## Included Libraries
+- [Catch2](https://github.com/catchorg/Catch2) (Unit testing framework, basic micro-benchmarking, simple [BDD](https://en.wikipedia.org/wiki/Behavior-driven_development) macros)
+- [CLI11](https://github.com/CLIUtils/CLI11) (Command line parser for C++11 and beyond)
+- [fmtlib](https://github.com/fmtlib/fmt) (Fast and safe alternative to C stdio and C++ iostreams)
+- [FTXUI](https://github.com/ArthurSonzogni/FTXUI) (A simple cross-platform C++ library for terminal based user interfaces)
+- [libenvpp](https://github.com/ph3at/libenvpp) (Modern C++ Library for Handling Environment Variables)
+- [scnlib](https://github.com/eliaskosunen/scnlib) (Modern C++ library for replacing scanf and std::istream)
+- [spdlog](https://github.com/gabime/spdlog) (Very fast, header-only/compiled, C++ logging library)
+- [tools](https://github.com/lefticus/tools/tree/update_build_system) 
+	([consteval_invoke](https://github.com/lefticus/tools/blob/update_build_system/include/lefticus/tools/consteval_invoke.hpp)
+	[curry](https://github.com/lefticus/tools/blob/update_build_system/include/lefticus/tools/curry.hpp), 
+	[flat_map](https://github.com/lefticus/tools/blob/update_build_system/include/lefticus/tools/flat_map.hpp), 
+	[flat_map_adapter](https://github.com/lefticus/tools/blob/update_build_system/include/lefticus/tools/flat_map_adapter.hpp), 
+	[lambda_coroutines](https://github.com/lefticus/tools/blob/update_build_system/include/lefticus/tools/lambda_coroutines.hpp), 
+	[non_promoting_ints](https://github.com/lefticus/tools/blob/update_build_system/include/lefticus/tools/non_promoting_ints.hpp), 
+	simple_stack_([flat_map](https://github.com/lefticus/tools/blob/update_build_system/include/lefticus/tools/simple_stack_flat_map.hpp), [string](https://github.com/lefticus/tools/blob/update_build_system/include/lefticus/tools/simple_stack_string.hpp), [vector](https://github.com/lefticus/tools/blob/update_build_system/include/lefticus/tools/simple_stack_vector.hpp)), 
+	[static_views](https://github.com/lefticus/tools/blob/update_build_system/include/lefticus/tools/static_views.hpp), 
+	[utility](https://github.com/lefticus/tools/blob/update_build_system/include/lefticus/tools/utility.hpp))
