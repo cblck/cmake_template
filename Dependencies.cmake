@@ -40,6 +40,14 @@ function(myproject_setup_dependencies)
     cpmaddpackage("gh:ph3at/libenvpp@1.4.0")
   endif()
 
+  if(NOT TARGET cpuid::cpuid)
+    cpmaddpackage("gh:anrieff/libcpuid@0.6.4")
+  endif()
+  
+  if(NOT TARGET hedley::hedley)
+    cpmaddpackage("gh:cblck/hedley@17.0.0")
+  endif()
+
   if(NOT TARGET ftxui::screen)
     cpmaddpackage("gh:ArthurSonzogni/FTXUI@5.0.0")
   endif()
