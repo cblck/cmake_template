@@ -48,6 +48,10 @@ function(myproject_setup_dependencies)
     cpmaddpackage("gh:cblck/hedley@17.0.0")
   endif()
 
+  if(NOT TARGET gcc-poison::gcc-poison)
+    cpmaddpackage("gh:cblck/gcc-poison@0.1.0")
+  endif()
+
   if(NOT TARGET ftxui::screen)
     cpmaddpackage("gh:ArthurSonzogni/FTXUI@5.0.0")
   endif()
@@ -56,8 +60,16 @@ function(myproject_setup_dependencies)
     cpmaddpackage("gh:lefticus/tools#update_build_system")
   endif()
 
-  if(NOT TARGET gcc-poison::gcc-poison)
-    cpmaddpackage("gh:cblck/gcc-poison@0.1.0")
+  if(NOT TARGET parallel-hashmap::parallel-hashmap)
+    cpmaddpackage("gh:greg7mdp/parallel-hashmap@1.3.11")
+  endif()
+  
+  if(NOT TARGET unordered_dense::unordered_dense)
+    cpmaddpackage("gh:martinus/unordered_dense@4.4.0")
+  endif()
+
+  if(NOT TARGET svector::svector)
+    cpmaddpackage("gh:martinus/svector@1.0.3")
   endif()
 
 endfunction()
