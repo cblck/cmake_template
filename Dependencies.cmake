@@ -71,5 +71,25 @@ function(myproject_setup_dependencies)
   if(NOT TARGET svector::svector)
     cpmaddpackage("gh:martinus/svector@1.0.3")
   endif()
+  
+  if(NOT TARGET plf_colony::plf_colony)
+    cpmaddpackage("gh:mattreecebentley/plf_colony#abb0aa6525a3dae56aacf50899517f47e7036016") # v7.41
+  endif()
+  
+  if(NOT TARGET plf_list::plf_list)
+    cpmaddpackage("gh:mattreecebentley/plf_list#a8280f5328522ee9bcb4bface898db490c59645e") # v2.71
+  endif()
+  
+  if(NOT TARGET plf_queue::plf_queue)
+    cpmaddpackage("gh:mattreecebentley/plf_queue#1fb9d87a210f7813450ee54a469f9f79ea4ec872") # v2.02
+  endif()
+  
+  if(NOT TARGET plf_stack::plf_stack)
+    cpmaddpackage("gh:mattreecebentley/plf_stack#9d11bf2c5de5df739c0943af942a544c95b26ffa") # v2.01
+  endif()
+  
+  if(NOT TARGET plf_rand::plf_rand)
+    cpmaddpackage("gh:mattreecebentley/plf_rand#764684817b0208b9f18b4b3d18f4f8d8f33fa1f0") # v1.05
+  endif()
 
 endfunction()
