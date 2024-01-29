@@ -56,4 +56,8 @@ function(myproject_setup_dependencies)
     cpmaddpackage("gh:lefticus/tools#update_build_system")
   endif()
 
+  if(NOT TARGET gcc-poison::gcc-poison)
+    cpmaddpackage("gh:cblck/gcc-poison@0.1.0")
+  endif()
+
 endfunction()

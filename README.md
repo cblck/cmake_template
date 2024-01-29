@@ -42,7 +42,7 @@ Credit to [fffaraz/awesome-cpp](https://github.com/fffaraz/awesome-cpp) for thei
 - [CLI11](https://github.com/CLIUtils/CLI11) (Command line parser for C++11 and beyond)
 - [fmtlib](https://github.com/fmtlib/fmt) (Fast and safe alternative to C stdio and C++ iostreams)
 - [FTXUI](https://github.com/ArthurSonzogni/FTXUI) (A simple cross-platform C++ library for terminal based user interfaces)
-- [hedley](https://github.com/nemequ/hedley) ([Kamilcuk's Fork](https://github.com/Kamilcuk/hedley): Wrappers for platform-specific functionality)
+- [hedley](https://github.com/cblck/hedley) (Forked from [Kamilcuk](https://github.com/Kamilcuk/hedley) after [nemequ](https://github.com/nemequ/hedley)): Wrappers for platform-specific functionality)
 - [lefticus:tools](https://github.com/lefticus/tools/tree/update_build_system) 
 	([consteval_invoke](https://github.com/lefticus/tools/blob/update_build_system/include/lefticus/tools/consteval_invoke.hpp)
 	[curry](https://github.com/lefticus/tools/blob/update_build_system/include/lefticus/tools/curry.hpp), 
