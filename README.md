@@ -44,6 +44,7 @@ Credit to [fffaraz/awesome-cpp](https://github.com/fffaraz/awesome-cpp) for thei
 | [Catch2](https://github.com/catchorg/Catch2)									| [BSL 1.0](https://github.com/catchorg/Catch2/blob/devel/LICENSE.txt)				| Unit testing framework, basic micro-benchmarking, simple [BDD](https://en.wikipedia.org/wiki/Behavior-driven_development) macros |
 | [CLI11](https://github.com/CLIUtils/CLI11)									| [BSD 3-Clause](https://github.com/CLIUtils/CLI11/blob/main/LICENSE)				| Command line parser for C++11 and beyond |
 | [cpp-sort](https://github.com/Morwenn/cpp-sort)								| [MIT](https://github.com/Morwenn/cpp-sort/blob/1.x.y-develop/LICENSE.txt)			| Generic C++14 header-only sorting library |
+| [EnTT](https://github.com/skypjack/entt)										| [MIT](https://github.com/skypjack/entt/blob/master/LICENSE)						| Entity-component system, ***reflection***, and [more](https://github.com/skypjack/entt/wiki) |
 | [faker-cxx](https://github.com/cieslarmichal/faker-cxx)						| [MIT](https://github.com/cieslarmichal/faker-cxx/blob/main/LICENSE)				| Generate fake (but realistic) data for testing and development |
 | [fmtlib](https://github.com/fmtlib/fmt)										| [MIT](https://github.com/fmtlib/fmt/blob/master/LICENSE)							| Fast and safe alternative to C `stdio` and C++ `iostreams` |
 | [FTXUI](https://github.com/ArthurSonzogni/FTXUI)								| [MIT](https://github.com/ArthurSonzogni/FTXUI/blob/main/LICENSE)					| A simple cross-platform C++ library for terminal based user interfaces |
@@ -62,3 +63,4 @@ Credit to [fffaraz/awesome-cpp](https://github.com/fffaraz/awesome-cpp) for thei
 | [spdlog](https://github.com/gabime/spdlog)									| [MIT](https://github.com/gabime/spdlog/blob/v1.x/LICENSE)							| Very fast, header-only/compiled, C++ logging library |
 | [unordered_dense](https://github.com/martinus/unordered_dense)				| [MIT](https://github.com/martinus/unordered_dense/blob/main/LICENSE)				| *Almost* drop-in replacements of `std::unordered_map` and `std::unordered_set` |
 | [svector](https://github.com/martinus/svector)								| [MIT](https://github.com/martinus/svector/blob/main/LICENSE)						| `std::vector`-like stack container without the need for any allocation |
+| [zpp_bits](https://github.com/eyalz800/zpp_bits)								| [MIT](https://github.com/eyalz800/zpp_bits/blob/main/LICENSE)						| Modern C++20 binary serialization and RPC library |
