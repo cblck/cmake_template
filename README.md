@@ -43,6 +43,8 @@ Credit to [fffaraz/awesome-cpp](https://github.com/fffaraz/awesome-cpp) for thei
 |----------------------------------------------|:-----------------:|-----------------------|
 | [Catch2](https://github.com/catchorg/Catch2)									| [BSL 1.0](https://github.com/catchorg/Catch2/blob/devel/LICENSE.txt)				| Unit testing framework, basic micro-benchmarking, simple [BDD](https://en.wikipedia.org/wiki/Behavior-driven_development) macros |
 | [CLI11](https://github.com/CLIUtils/CLI11)									| [BSD 3-Clause](https://github.com/CLIUtils/CLI11/blob/main/LICENSE)				| Command line parser for C++11 and beyond |
+| [cpp-sort](https://github.com/Morwenn/cpp-sort)								| [MIT](https://github.com/Morwenn/cpp-sort/blob/1.x.y-develop/LICENSE.txt)			| Generic C++14 header-only sorting library |
+| [faker-cxx](https://github.com/cieslarmichal/faker-cxx)						| [MIT](https://github.com/cieslarmichal/faker-cxx/blob/main/LICENSE)				| Generate fake (but realistic) data for testing and development |
 | [fmtlib](https://github.com/fmtlib/fmt)										| [MIT](https://github.com/fmtlib/fmt/blob/master/LICENSE)							| Fast and safe alternative to C `stdio` and C++ `iostreams` |
 | [FTXUI](https://github.com/ArthurSonzogni/FTXUI)								| [MIT](https://github.com/ArthurSonzogni/FTXUI/blob/main/LICENSE)					| A simple cross-platform C++ library for terminal based user interfaces |
 | [gcc-poison](https://github.com/cblck/gcc-poison)								| [BSD 3-Clause](https://github.com/cblck/gcc-poison/blob/master/LICENSE)			| Forked from [leafsr](https://github.com/leafsr/gcc-poison): Header file to ban unsafe C/C++ functions |
