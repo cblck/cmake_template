@@ -68,14 +68,6 @@ function(optional_frameworks)
 
 endfunction()
 
-function(optional_linting)
-
-# if(NOT TARGET gcc-poison::gcc-poison)
-#   cpmaddpackage("gh:cblck/gcc-poison@0.1.0")
-# endif()
-
-endfunction()
-
 function(optional_testing_libs)
 
 # if(NOT TARGET faker-cxx::faker-cxx)
@@ -90,7 +82,6 @@ optional_algorithms()
 optional_containers()
 optional_environment_and_OS()
 optional_frameworks()
-optional_linting()
 optional_testing_libs()
 
 endfunction()

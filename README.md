@@ -66,7 +66,5 @@ Credit to [fffaraz/awesome-cpp](https://github.com/fffaraz/awesome-cpp) for thei
 | [libenvpp](https://github.com/ph3at/libenvpp)									| [Apache 2.0](https://github.com/ph3at/libenvpp/blob/main/LICENSE)					| Modern C++ Library for Handling Environment Variables |
 | | | ***Frameworks*** |
 | [EnTT](https://github.com/skypjack/entt)										| [MIT](https://github.com/skypjack/entt/blob/master/LICENSE)						| Entity-component system, ***reflection***, and [more](https://github.com/skypjack/entt/wiki) |
-| | | ***Linting*** |
-| [gcc-poison](https://github.com/cblck/gcc-poison)								| [BSD 3-Clause](https://github.com/cblck/gcc-poison/blob/master/LICENSE)			| Forked from [leafsr](https://github.com/leafsr/gcc-poison): Header file to ban unsafe C/C++ functions |
 | | | ***Testing*** |
 | [faker-cxx](https://github.com/cieslarmichal/faker-cxx)						| [MIT](https://github.com/cieslarmichal/faker-cxx/blob/main/LICENSE)				| Generate fake (but realistic) data for testing and development |
