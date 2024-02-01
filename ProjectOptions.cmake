@@ -30,6 +30,13 @@ macro(myproject_setup_options)
 
   myproject_supports_sanitizers()
 
+  # CCache prevents use of /Zi for .pdb generation.
+  if(MSVC)
+    set(USE_CCACHE OFF)
+  else()
+    set(USE_CCACHE ON)
+  endif()
+
   if(NOT PROJECT_IS_TOP_LEVEL OR myproject_PACKAGING_MAINTAINER_MODE)
     option(myproject_ENABLE_IPO "Enable IPO/LTO" OFF)
     option(myproject_WARNINGS_AS_ERRORS "Treat Warnings As Errors" OFF)
@@ -57,7 +64,7 @@ macro(myproject_setup_options)
     option(myproject_ENABLE_CLANG_TIDY "Enable clang-tidy" ON)
     option(myproject_ENABLE_CPPCHECK "Enable cpp-check analysis" ON)
     option(myproject_ENABLE_PCH "Enable precompiled headers" OFF)
-    option(myproject_ENABLE_CACHE "Enable ccache" ON)
+    option(myproject_ENABLE_CACHE "Enable ccache" ${USE_CCACHE})
   endif()
 
   if(NOT PROJECT_IS_TOP_LEVEL)
