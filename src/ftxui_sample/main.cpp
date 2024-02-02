@@ -327,13 +327,13 @@ int main(int argc, const char **argv)
 
     std::optional<std::string> message;
     app.add_option("-m,--message", message, "A message to print back out");
-    bool show_version = false;
+    bool show_version = false; // NOLINT(misc-const-correctness)
     app.add_flag("--version", show_version, "Show version information");
 
-    bool is_turn_based = false;
+    bool is_turn_based = false; // NOLINT(misc-const-correctness)
     auto *turn_based = app.add_flag("--turn_based", is_turn_based);
 
-    bool is_loop_based = false;
+    bool is_loop_based = false; // NOLINT(misc-const-correctness)
     auto *loop_based = app.add_flag("--loop_based", is_loop_based);
 
     turn_based->excludes(loop_based);
