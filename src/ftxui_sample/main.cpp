@@ -24,6 +24,8 @@
 // the source template at `configured_files/config.hpp.in`.
 #include <internal_use_only/config.hpp>
 
+using namespace lefticus::tools::literals;
+
 template<std::size_t Width, std::size_t Height> struct GameBoard
 {
   static constexpr std::size_t width = Width;
@@ -171,9 +173,9 @@ void consequence_game()
 
 struct Color
 {
-  lefticus::tools::uint_np8_t R{ static_cast<std::uint8_t>(0) };
-  lefticus::tools::uint_np8_t G{ static_cast<std::uint8_t>(0) };
-  lefticus::tools::uint_np8_t B{ static_cast<std::uint8_t>(0) };
+  lefticus::tools::uint_np8_t R{ 0_npu8 };
+  lefticus::tools::uint_np8_t G{ 0_npu8 };
+  lefticus::tools::uint_np8_t B{ 0_npu8 };
 };
 
 // A simple way of representing a bitmap on screen using only characters
