@@ -97,7 +97,7 @@ template<std::size_t Width, std::size_t Height> struct GameBoard
   }
 };
 
-
+namespace {
 void consequence_game()
 {
   auto screen = ftxui::ScreenInteractive::TerminalOutput();
@@ -112,7 +112,7 @@ void consequence_game()
   };
 
   const auto make_buttons = [&] {
-    std::vector<ftxui::Component> buttons; // NOLINT(cppcoreguidelines-init-variables)
+    std::vector<ftxui::Component> buttons;// NOLINT(cppcoreguidelines-init-variables)
     buttons.reserve(game_board.width * game_board.height);
     for (std::size_t cur_x = 0; cur_x < game_board.width; ++cur_x) {
       for (std::size_t cur_y = 0; cur_y < game_board.height; ++cur_y) {
@@ -130,13 +130,13 @@ void consequence_game()
   auto quit_button = ftxui::Button(&quit_text, screen.ExitLoopClosure());
 
   auto make_layout = [&] {
-    std::vector<ftxui::Element> rows; // NOLINT(cppcoreguidelines-init-variables)
+    std::vector<ftxui::Element> rows;// NOLINT(cppcoreguidelines-init-variables)
     rows.reserve(game_board.width * game_board.height);
 
     std::size_t idx = 0;
 
     for (std::size_t cur_x = 0; cur_x < game_board.width; ++cur_x) {
-      std::vector<ftxui::Element> row; // NOLINT(cppcoreguidelines-init-variables)
+      std::vector<ftxui::Element> row;// NOLINT(cppcoreguidelines-init-variables)
       row.reserve(game_board.height);
       for (std::size_t cur_y = 0; cur_y < game_board.height; ++cur_y) {
         row.push_back(buttons[idx]->Render());
@@ -165,7 +165,7 @@ void consequence_game()
   game_board.move_count = 0;
   update_quit_text(game_board);
 
-  auto& all_buttons = buttons;
+  auto &all_buttons = buttons;
   all_buttons.push_back(quit_button);
   auto container = ftxui::Container::Horizontal(all_buttons);
 
@@ -321,6 +321,7 @@ void game_iteration_canvas()
   refresh_ui_continue = false;
   refresh_ui.join();
 }
+}// namespace
 
 // NOLINTNEXTLINE(bugprone-exception-escape)
 int main(int argc, const char **argv)
@@ -343,7 +344,7 @@ int main(int argc, const char **argv)
     loop_based->excludes(turn_based);
 
 
-    CLI11_PARSE(app, argc, argv);
+    CLI11_PARSE(app, argc, argv)
 
     if (show_version) {
       fmt::print("{}\n", myproject::cmake::project_version);
