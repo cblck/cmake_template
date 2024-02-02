@@ -13,11 +13,13 @@ macro(myproject_enable_cppcheck WARNINGS_AS_ERRORS CPPCHECK_OPTIONS)
       # style should enable the other 3, but we'll be explicit just in case
       set(SUPPRESS_DIR "*:${CMAKE_CURRENT_BINARY_DIR}/_deps/*.h")
       message(STATUS "CPPCHECK_OPTIONS suppress: ${SUPPRESS_DIR}")
+      message(AUTHOR_WARNING "CPPCHECK platform=native. Change to target architecture if needed.")
       set(CMAKE_CXX_CPPCHECK
           ${CPPCHECK}
           --template=${CPPCHECK_TEMPLATE}
           --enable=style,performance,warning,portability
           --inline-suppr
+          --platform=native
           # We cannot act on a bug/missing feature of cppcheck
           --suppress=cppcheckError
           --suppress=internalAstError
