@@ -61,9 +61,7 @@
             "vendor": {
                 "microsoft.com/VisualStudioSettings/CMake/1.0": {
                     "hostOS": "Linux"
-                }
-            },
-            "vendor": {
+                },
                 "microsoft.com/VisualStudioRemoteSettings/CMake/1.0": {
                     "sourceDir": "$env{HOME}/.vs/$ms{projectDirName}",
                     "copyBuildOutput": true

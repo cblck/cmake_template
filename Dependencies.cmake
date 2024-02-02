@@ -48,7 +48,7 @@ function(myproject_setup_dependencies)
   endif()
 
   if(NOT TARGET tools::tools)
-    cpmaddpackage("gh:lefticus/tools#update_build_system")
+    cpmaddpackage("gh:cblck/lefticus-tools#main")
   endif()
 
 endfunction()
