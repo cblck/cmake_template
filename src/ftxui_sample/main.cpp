@@ -112,7 +112,8 @@ void consequence_game()
   };
 
   const auto make_buttons = [&] {
-    std::vector<ftxui::Component> buttons;
+    std::vector<ftxui::Component> buttons; // NOLINT(cppcoreguidelines-init-variables)
+    buttons.reserve(game_board.width * game_board.height);
     for (std::size_t cur_x = 0; cur_x < game_board.width; ++cur_x) {
       for (std::size_t cur_y = 0; cur_y < game_board.height; ++cur_y) {
         buttons.push_back(ftxui::Button(&game_board.get_string(cur_x, cur_y), [=, &game_board] {
@@ -129,12 +130,14 @@ void consequence_game()
   auto quit_button = ftxui::Button(&quit_text, screen.ExitLoopClosure());
 
   auto make_layout = [&] {
-    std::vector<ftxui::Element> rows;
+    std::vector<ftxui::Element> rows; // NOLINT(cppcoreguidelines-init-variables)
+    rows.reserve(game_board.width * game_board.height);
 
     std::size_t idx = 0;
 
     for (std::size_t cur_x = 0; cur_x < game_board.width; ++cur_x) {
-      std::vector<ftxui::Element> row;
+      std::vector<ftxui::Element> row; // NOLINT(cppcoreguidelines-init-variables)
+      row.reserve(game_board.height);
       for (std::size_t cur_y = 0; cur_y < game_board.height; ++cur_y) {
         row.push_back(buttons[idx]->Render());
         ++idx;
