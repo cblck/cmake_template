@@ -79,6 +79,9 @@ macro(myproject_enable_clang_tidy target WARNINGS_AS_ERRORS)
         -extra-arg=-Wno-unknown-warning-option
         -extra-arg=-Wno-ignored-optimization-argument
         -extra-arg=-Wno-unused-command-line-argument
+        -extra-arg=-Wno-c++98-compat
+        -extra-arg=-Wno-c++98-compat-pedantic
+        -extra-arg=-Wno-pre-c++20-compat-pedantic
         -p)
     # set standard
     if(NOT
