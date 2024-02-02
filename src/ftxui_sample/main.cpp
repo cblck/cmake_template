@@ -2,15 +2,13 @@
 #include <optional>
 
 #ifdef __INTELLISENSE__
-#pragma diag_suppress 20
-#pragma diag_suppress 59
+#pragma diag_suppress 20, 59
 #endif
 #include <functional>
 #include <iostream>
 #include <random>
 #ifdef __INTELLISENSE__
-#pragma diag_default 20
-#pragma diag_default 59
+#pragma diag_default 20, 59
 #endif
 
 #include <CLI/CLI.hpp>
@@ -162,7 +160,7 @@ void consequence_game()
   game_board.move_count = 0;
   update_quit_text(game_board);
 
-  auto all_buttons = buttons;
+  auto& all_buttons = buttons;
   all_buttons.push_back(quit_button);
   auto container = ftxui::Container::Horizontal(all_buttons);
 
