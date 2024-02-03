@@ -27,8 +27,8 @@ function(
         /wd5026 # Class' move constructor was implicitly defined as deleted. https://learn.microsoft.com/en-us/cpp/error-messages/compiler-warnings/compiler-warnings-c4800-through-c4999?view=msvc-170#warning-messages
         /wd5027 # Class' move assignment operator was implicitly defined as deleted. https://learn.microsoft.com/en-us/cpp/error-messages/compiler-warnings/compiler-warnings-c4800-through-c4999?view=msvc-170#warning-messages
         /wd5045 # /Qspectre not enabled. https://learn.microsoft.com/en-us/cpp/error-messages/compiler-warnings/c5045?view=msvc-170
-        /external:anglebrackets
-        /external:W0
+        /external:anglebrackets # Ignore warnings in headers included with <>.
+        /external:W0 # Ignore warnings in headers included with <>.
     )
   endif()
 
