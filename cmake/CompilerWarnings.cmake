@@ -12,29 +12,21 @@ function(
   CUDA_WARNINGS)
   if("${MSVC_WARNINGS}" STREQUAL "")
     set(MSVC_WARNINGS
-        /W4 # Baseline reasonable warnings
-        /w14242 # 'identifier': conversion from 'type1' to 'type2', possible loss of data
-        /w14254 # 'operator': conversion from 'type1:field_bits' to 'type2:field_bits', possible loss of data
-        /w14263 # 'function': member function does not override any base class virtual member function
-        /w14265 # 'classname': class has virtual functions, but destructor is not virtual instances of this class may not
-                # be destructed correctly
-        /w14287 # 'operator': unsigned/negative constant mismatch
-        /we4289 # nonstandard extension used: 'variable': loop control variable declared in the for-loop is used outside
-                # the for-loop scope
-        /w14296 # 'operator': expression is always 'boolean_value'
-        /w14311 # 'variable': pointer truncation from 'type1' to 'type2'
-        /w14545 # expression before comma evaluates to a function which is missing an argument list
-        /w14546 # function call before comma missing argument list
-        /w14547 # 'operator': operator before comma has no effect; expected operator with side-effect
-        /w14549 # 'operator': operator before comma has no effect; did you intend 'operator'?
-        /w14555 # expression has no effect; expected expression with side- effect
-        /w14619 # pragma warning: there is no warning number 'number'
-        /w14640 # Enable warning on thread un-safe static member initialization
-        /w14826 # Conversion from 'type1' to 'type2' is sign-extended. This may cause unexpected runtime behavior.
-        /w14905 # wide string literal cast to 'LPSTR'
-        /w14906 # string literal cast to 'LPWSTR'
-        /w14928 # illegal copy-initialization; more than one user-defined conversion has been implicitly applied
-        /permissive- # standards conformance mode for MSVC compiler.
+        /Wall # Everything with the following exceptions:
+        /permissive- # enforce standards conformance mode for MSVC compiler.
+        /wd4255 # C-specific warning. https://learn.microsoft.com/en-us/cpp/error-messages/compiler-warnings/compiler-warning-level-4-c4255?view=msvc-170
+        /wd4342 # False positive likelihood after VS 2002. https://learn.microsoft.com/en-us/cpp/error-messages/compiler-warnings/compiler-warning-level-1-c4342?view=msvc-170
+        /wd4514 # Desired optimization: Smaller binary. https://learn.microsoft.com/en-us/cpp/error-messages/compiler-warnings/compiler-warning-level-4-c4514?view=msvc-170
+        /wd4625 # Derived_class' copy constructor was implicitly deleted. https://learn.microsoft.com/en-us/cpp/error-messages/compiler-warnings/compiler-warning-level-4-c4625?view=msvc-170
+        /wd4626 # Derived_class' assignment operator was implicitly deleted. https://learn.microsoft.com/en-us/cpp/error-messages/compiler-warnings/compiler-warning-level-4-c4626?view=msvc-170
+        /wd4710 # Desired optimization: Noisy to litter code with 'inline'. https://learn.microsoft.com/en-us/cpp/error-messages/compiler-warnings/compiler-warning-level-4-c4710?view=msvc-170
+        /wd4711 # Desired optimization: Noisy to litter code with 'inline'. https://learn.microsoft.com/en-us/cpp/error-messages/compiler-warnings/compiler-warning-level-1-c4711?view=msvc-170
+        /wd4866 # CLI11 code may not enforce left-to-right evaluation order.
+        /wd4868 # Catch2 TEST macros may not enforce left-to-right evaluation order.
+        /wd4820 # TODO: Fix unnecessary struct padding. https://learn.microsoft.com/en-us/cpp/error-messages/compiler-warnings/compiler-warning-level-1-c4711?view=msvc-170
+        /wd5026 # Class' move constructor was implicitly defined as deleted. https://learn.microsoft.com/en-us/cpp/error-messages/compiler-warnings/compiler-warnings-c4800-through-c4999?view=msvc-170#warning-messages
+        /wd5027 # Class' move assignment operator was implicitly defined as deleted. https://learn.microsoft.com/en-us/cpp/error-messages/compiler-warnings/compiler-warnings-c4800-through-c4999?view=msvc-170#warning-messages
+        /wd5045 # /Qspectre not enabled. https://learn.microsoft.com/en-us/cpp/error-messages/compiler-warnings/c5045?view=msvc-170
     )
   endif()
 
