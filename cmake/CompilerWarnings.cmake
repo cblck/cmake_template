@@ -32,6 +32,17 @@ function(
 
   if("${CLANG_WARNINGS}" STREQUAL "")
     set(CLANG_WARNINGS
+        -Weverything
+        # Minimum c++20
+        -Wno-c++98-compat
+        -Wno-c++98-compat-pedantic
+        -Wno-pre-c++20-compat-pedantic
+    )
+  endif()
+
+  if("${GCC_WARNINGS}" STREQUAL "")
+    set(GCC_WARNINGS
+        # Clang compatible
         -Wall
         -Wextra # reasonable and standard
         -Wshadow # warn the user if a variable declaration shadows one from a parent context
@@ -52,12 +63,7 @@ function(
         -Wno-c++98-compat
         -Wno-c++98-compat-pedantic
         -Wno-pre-c++20-compat-pedantic
-    )
-  endif()
-
-  if("${GCC_WARNINGS}" STREQUAL "")
-    set(GCC_WARNINGS
-        ${CLANG_WARNINGS}
+        # GCC only
         -Wmisleading-indentation # warn if indentation implies blocks where blocks do not exist
         -Wduplicated-cond # warn if if / else chain has duplicated conditions
         -Wduplicated-branches # warn if if / else branches have duplicated code
