@@ -33,8 +33,8 @@ function(
   if("${CLANG_WARNINGS}" STREQUAL "")
     set(CLANG_WARNINGS
         -Weverything
-        # TODO: Fix unnecessary struct padding where possible.
-        -Wno-padded
+        -Wno-padded # TODO: Fix unnecessary struct padding where possible.
+        -Wno-missing-prototypes # Intentional for [extern "C"] ex: LLVMFuzzerTestOneInput()
         # Minimum c++20
         -Wno-c++98-compat
         -Wno-c++98-compat-pedantic
